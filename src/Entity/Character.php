@@ -145,10 +145,11 @@ class Character
     }
 
     /**
-     * @param int $damage
+     * @param Archer|Mage|Paladin|Warrior $target
+     * @return int
      */
-    public function attack(int $damage)
+    public function attack($target)
     {
-
+        return $target->setLife($target->getLife() - ($this->getDamage() - $target->getArmor()));
     }
 }
