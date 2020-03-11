@@ -71,10 +71,13 @@ class Character
 
     /**
      * @param int $life
+     * @return int
      */
-    public function setLife(int $life): void
+    public function setLife(int $life): int
     {
         $this->life = $life;
+
+        return $life;
     }
 
     /**

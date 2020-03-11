@@ -2,6 +2,7 @@
 
 
 namespace App\Entity;
+require_once(__DIR__ .'\Character.php');
 
 /**
  * Class Warrior
