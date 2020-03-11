@@ -38,7 +38,13 @@ class Team
      */
     public function addCharacter($character, ...$characters)
     {
+        $this->characters[] = $character;
 
+        foreach ($characters as $character) {
+            $this->characters[] = $character;
+        }
+
+        return $this->characters;
     }
 
 }
