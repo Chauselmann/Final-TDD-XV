@@ -32,8 +32,8 @@ class Team
     }
 
     /**
-     * @param $character
-     * @param mixed ...$characters
+     * @param Archer|Mage|Paladin|Warrior $character
+     * @param Archer|Mage|Paladin|Warrior ...$characters
      * @return array
      */
     public function addCharacter($character, ...$characters)
@@ -48,7 +48,7 @@ class Team
     }
 
     /**
-     * @param $character
+     * @param Archer|Mage|Paladin|Warrior $character
      * @return array
      */
     public function removeCharacter($character)
