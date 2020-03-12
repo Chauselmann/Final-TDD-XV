@@ -47,8 +47,19 @@ class Team
         return $this->characters;
     }
 
+    /**
+     * @param $character
+     * @return array
+     */
     public function removeCharacter($character)
     {
-
+        $tmpArr           = $this->characters;
+        $this->characters = [];
+        foreach ($tmpArr as $item) {
+            if ($item !== $character) {
+                $this->characters[] = $item;
+            }
+        }
+        return $this->characters;
     }
 }
