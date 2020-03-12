@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 final class FightTest extends TestCase
 {
-    public function testSart()
+    public function testStart()
     {
         $player1 = new Paladin('team1-1');
         $player2 = new Warrior('team1-2');
