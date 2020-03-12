@@ -25,9 +25,9 @@ $player5 = new Warrior('team2-2');
 $player6 = new Archer('team2-3');
 
 $team1 = new Team('team 1');
-$team1->addCharacter($player1, $player2);
+$team1->addCharacter($player1, $player2, $player3);
 $team2 = new Team('team 2');
-$team2->addCharacter($player4, $player5);
+$team2->addCharacter($player4, $player5, $player6);
 
 $fight = new Fight($team1, $team2);
 
