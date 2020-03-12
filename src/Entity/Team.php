@@ -47,4 +47,8 @@ class Team
         return $this->characters;
     }
 
+    public function removeCharacter($character)
+    {
+
+    }
 }

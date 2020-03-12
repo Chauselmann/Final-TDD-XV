@@ -26,4 +26,16 @@ final class TeamTest extends TestCase
         );
         $this->assertEquals(4, count($team->getCharacters()), '4 players should have been added to the team');
     }
+
+    public function testRemove()
+    {
+        $team = new Team('Team 1');
+        $warrior = new Warrior('Guerrier 1');
+        $mage    = new Mage('Mage 1');
+        $paladin = new Paladin('Paladin 1');
+        $archer  = new Archer('Archer 1');
+        $team->addCharacter($warrior, $mage, $paladin, $archer);
+        $team->removeCharacter($archer);
+        $this->assertEquals(3, count($team->getCharacters()), '1 player should have been removed from the team');
+    }
 }
