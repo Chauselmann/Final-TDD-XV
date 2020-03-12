@@ -48,7 +48,7 @@ class Team
     }
 
     /**
-     * @param $character
+     * @param Archer|Mage|Paladin|Warrior $character
      * @return array
      */
     public function removeCharacter($character)
