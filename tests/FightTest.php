@@ -17,7 +17,8 @@ use PHPUnit\Framework\TestCase;
 
 final class FightTest extends TestCase
 {
-    public function testStart()
+
+    public function testCheckUserInput()
     {
         $player1 = new Paladin('team1-1');
         $player2 = new Warrior('team1-2');
@@ -33,6 +34,25 @@ final class FightTest extends TestCase
         $team2->addCharacter($player4, $player5);
         $fight = new Fight($team1, $team2);
 
-        $this->assertContains($fight->start(), ['team 1', 'team 2'], 'Should return the name of the winning team');
+        $this->assertEquals($fight->checkUserInput([0,1,2], 2), true, 'Not match');
     }
+
+//    public function testStart()
+//    {
+//        $player1 = new Paladin('team1-1');
+//        $player2 = new Warrior('team1-2');
+//        $player3 = new Mage('team1-3');
+//
+//        $player4 = new Paladin('team2-1');
+//        $player5 = new Warrior('team2-2');
+//        $player6 = new Archer('team2-3');
+//
+//        $team1 = new Team('team 1');
+//        $team1->addCharacter($player1, $player2);
+//        $team2 = new Team('team 2');
+//        $team2->addCharacter($player4, $player5);
+//        $fight = new Fight($team1, $team2);
+//
+//        $this->assertContains($fight->start(), ['team 1', 'team 2'], 'Should return the name of the winning team');
+//    }
 }
