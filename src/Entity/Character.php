@@ -152,4 +152,7 @@ class Character
     {
         return $target->setLife($target->getLife() - ($this->getDamage() - $target->getArmor()));
     }
-}
+    public function heal(){
+        $this->setLife($this->getLife() + 50);
+        return $this->getLife();
+    }
