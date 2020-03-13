@@ -22,4 +22,12 @@ final class CharacterTest extends TestCase
         $archer = new Archer('archer1');
         $this->assertEquals($archer->getLife() + 50, $archer->heal(), 'Life should have increased by 50');
     }
+
+    public function testSpecialAttack()
+    {
+        $archer = new Archer('archer1');
+        $paladin = new Paladin('paladin1');
+
+        $this->assertEquals(30, $paladin->specialAttack($archer), 'Life should have decreased by 40');
+    }
 }
