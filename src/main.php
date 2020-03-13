@@ -20,10 +20,36 @@ echo "Choose a name for the first team : ";
 $handleTeam1 = fopen ("php://stdin","r");
 $nameTeam1 = fgets($handleTeam1);
 
+$entities = ['Archer', 'Mage', 'Paladin', 'Warrior'];
 
-echo "Choose a name for the first player of team ".$nameTeam1." : ";
-$handlePlayer1 = fopen ("php://stdin","r");
-$namePlayer1 = fgets($handlePlayer1);
+$valide = false;
+do{
+    echo "Choose a class for the first player of the team".$nameTeam1." : ";
+    $handleClass1 = fopen ("php://stdin","r");
+    $className1 = trim(fgets($handleClass1));
+    if (in_array($className1, $entities)){
+        $valide = true;
+        echo "Choose a name for the first player of team ".$nameTeam1." : ";
+        $handlePlayer1 = fopen ("php://stdin","r");
+        $namePlayer1 = fgets($handlePlayer1);
+        switch ($className1){
+            case 'Warrior':
+                $player1 = new Warrior($namePlayer1);
+                break;
+            case 'Mage':
+                $player1 = new Mage($namePlayer1);
+                break;
+            case 'Paladin':
+                $player1 = new Paladin($namePlayer1);
+                break;
+            case 'Archer':
+                $player1 = new Archer($namePlayer1);
+                break;
+        }
+    }
+} while(!$valide);
+
+var_dump($player1);
 
 echo "Choose a name for the second player of team ".$nameTeam1." : ";
 $handlePlayer2 = fopen ("php://stdin","r");
@@ -33,7 +59,7 @@ echo "Choose a name for the third player of team ".$nameTeam1." : ";
 $handlePlayer3 = fopen ("php://stdin","r");
 $namePlayer3 = fgets($handlePlayer3);
 
-$player1 = new Paladin($namePlayer1);
+
 $player2 = new Warrior($namePlayer2);
 $player3 = new Mage($namePlayer3);
 
