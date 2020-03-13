@@ -16,4 +16,10 @@ final class CharacterTest extends TestCase
 
         $this->assertEquals(50, $paladin->attack($archer), 'Life should have decreased by 20');
     }
+
+    public function testHeal()
+    {
+        $archer = new Archer('archer1');
+        $this->assertEquals($archer->getLife() + 50, $archer->heal(), 'Life should have increased by 50');
+    }
 }
